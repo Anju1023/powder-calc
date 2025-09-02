@@ -1,0 +1,313 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #f5f5f5;
+	line-height: 1.6;
+}
+
+header {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+h1 {
+	color: #333;
+	margin-bottom: 10px;
+	font-size: 2rem;
+}
+
+h2 {
+	color: #333;
+	margin-bottom: 20px;
+	font-size: 1.5rem;
+}
+
+h3 {
+	color: #555;
+	margin-bottom: 15px;
+	font-size: 1.2rem;
+}
+
+main {
+	background-color: white;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.input-section {
+	margin-bottom: 30px;
+}
+
+.input-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+label {
+	min-width: 100px;
+	font-weight: bold;
+	flex-shrink: 0;
+}
+
+input[type='text'],
+input[type='number'] {
+	padding: 8px 12px;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	font-size: 14px;
+	flex: 1;
+	min-width: 120px;
+}
+
+input[type='number'] {
+	width: 100px;
+	flex: 0 0 100px;
+}
+
+button {
+	background-color: #4caf50;
+	color: white;
+	padding: 12px 24px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+button.remove {
+	background-color: #f44336;
+	padding: 5px 10px;
+	font-size: 12px;
+	margin: 0;
+}
+
+button.remove:hover {
+	background-color: #da190b;
+}
+
+.copy-section {
+	margin: 20px 0;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.copy-btn {
+	background-color: #2196f3;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+	background-color: #1976d2;
+}
+
+.copy-status {
+	font-size: 14px;
+	font-weight: bold;
+	color: #4caf50;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.copy-status.show {
+	opacity: 1;
+}
+
+.copy-status.error {
+	color: #f44336;
+}
+
+.result-section {
+	margin-top: 30px;
+	padding: 20px;
+	background-color: #f9f9f9;
+	border-radius: 5px;
+}
+
+.result-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
+	overflow-x: auto;
+	display: block;
+	white-space: nowrap;
+}
+
+.result-table thead,
+.result-table tbody,
+.result-table tr {
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.result-table th,
+.result-table td {
+	border: 1px solid #ddd;
+	padding: 12px;
+	text-align: left;
+	word-wrap: break-word;
+}
+
+.result-table th {
+	background-color: #4caf50;
+	color: white;
+}
+
+.result-table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+footer {
+	text-align: center;
+	margin-top: 30px;
+	color: #666;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+	body {
+		padding: 10px;
+	}
+
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	h2 {
+		font-size: 1.3rem;
+	}
+
+	h3 {
+		font-size: 1.1rem;
+	}
+
+	main {
+		padding: 20px;
+	}
+
+	.input-group {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 10px;
+	}
+
+	label {
+		min-width: auto;
+		margin-bottom: 5px;
+	}
+
+	input[type='text'],
+	input[type='number'] {
+		width: 100%;
+		min-width: auto;
+		flex: none;
+	}
+
+	input[type='number'] {
+		width: 100%;
+		flex: none;
+	}
+
+	button {
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+
+	button.remove {
+		width: auto;
+		margin: 0;
+		align-self: flex-end;
+	}
+
+	.copy-section {
+		flex-direction: column;
+		align-items: stretch;
+	}
+
+	.copy-btn {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.result-table {
+		font-size: 14px;
+	}
+
+	.result-table th,
+	.result-table td {
+		padding: 8px;
+	}
+
+	/* テーブルを横スクロール対応 */
+	.result-table {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	.result-table thead,
+	.result-table tbody,
+	.result-table tr {
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+	}
+}
+
+/* 小さなスマートフォン対応 */
+@media (max-width: 480px) {
+	body {
+		padding: 5px;
+	}
+
+	main {
+		padding: 15px;
+	}
+
+	h1 {
+		font-size: 1.3rem;
+	}
+
+	h2 {
+		font-size: 1.2rem;
+	}
+
+	h3 {
+		font-size: 1rem;
+	}
+
+	.result-table {
+		font-size: 12px;
+	}
+
+	.result-table th,
+	.result-table td {
+		padding: 6px;
+	}
+}

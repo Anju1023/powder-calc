@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>粉の計算</title>
+		<link rel="stylesheet" href="src/css/style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>粉の計算</h1>
+			<p>生地の配合計算ツール</p>
+		</header>
+		<main>
+			<div class="input-section">
+				<h2>配合設定</h2>
+				<div class="input-group">
+					<label for="breadWeight">パンの重さ:</label>
+					<input
+						type="number"
+						id="breadWeight"
+						name="breadWeight"
+						value="500"
+						step="0.1"
+					/>
+					<span>g</span>
+				</div>
+
+				<h3>粉類（合計100%）</h3>
+				<div id="powderList">
+					<div class="powder-item">
+						<div class="input-group">
+							<label>粉名:</label>
+							<input type="text" class="powder-name" placeholder="例: 強力粉" />
+							<label>割合:</label>
+							<input
+								type="number"
+								class="powder-ratio"
+								value="100"
+								step="0.1"
+							/>
+							<span>%</span>
+							<button type="button" class="remove" onclick="removePowder(this)">
+								削除
+							</button>
+						</div>
+					</div>
+				</div>
+				<button type="button" onclick="addPowder()">粉を追加</button>
+
+				<h3>その他の材料（粉100%に対する割合）</h3>
+				<div id="otherList">
+					<div class="other-item">
+						<div class="input-group">
+							<label>材料名:</label>
+							<input type="text" class="other-name" placeholder="例: 水" />
+							<label>割合:</label>
+							<input type="number" class="other-ratio" value="0" step="0.1" />
+							<span>%</span>
+							<button type="button" class="remove" onclick="removeOther(this)">
+								削除
+							</button>
+						</div>
+					</div>
+				</div>
+				<button type="button" onclick="addOther()">材料を追加</button>
+				<button type="button" onclick="calculate()">計算実行</button>
+			</div>
+
+			<div class="result-section" id="resultSection" style="display: none">
+				<h2>計算結果</h2>
+				<div id="totalRatio"></div>
+				<div class="copy-section">
+					<button type="button" onclick="copyToClipboard()" class="copy-btn">
+						📋 Excel用にコピー
+					</button>
+					<div id="copyStatus" class="copy-status"></div>
+				</div>
+				<table class="result-table" id="resultTable">
+					<thead>
+						<tr>
+							<th>材料名</th>
+							<th>割合 (%)</th>
+							<th>必要量 (g)</th>
+							<th>種類</th>
+						</tr>
+					</thead>
+					<tbody id="resultBody"></tbody>
+				</table>
+			</div>
+		</main>
+		<footer>
+			<p>Copyright &copy; 2025 南部センターベーカリー</p>
+		</footer>
+		<script src="src/js/script.js"></script>
+	</body>
+</html>
