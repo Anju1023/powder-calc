@@ -95,17 +95,7 @@ function calculate() {
 		return;
 	}
 
-	// 粉の合計が100%でない場合は警告
-	if (Math.abs(powderTotalRatio - 100) > 0.1) {
-		alert(
-			`粉の合計が${powderTotalRatio.toFixed(
-				1
-			)}%です。100%になるように調整してください。`
-		);
-		return;
-	}
-
-	// 粉の重さを計算（粉100%を基準とする）
+	// 粉の重さを計算（粉の重さを100%として計算）
 	// 粉の重さ = パンの重さ × 100 ÷ (100 + その他材料の合計割合)
 	const otherTotalRatio = others.reduce((sum, item) => sum + item.ratio, 0);
 	const totalRatio = 100 + otherTotalRatio;
