@@ -173,6 +173,27 @@ button.remove:hover {
 	word-wrap: break-word;
 }
 
+/* テーブル列幅の調整 */
+.result-table th:nth-child(1),
+.result-table td:nth-child(1) {
+	width: 40%; /* 材料名の列を広く */
+}
+
+.result-table th:nth-child(2),
+.result-table td:nth-child(2) {
+	width: 20%; /* 割合の列 */
+}
+
+.result-table th:nth-child(3),
+.result-table td:nth-child(3) {
+	width: 20%; /* 必要量の列 */
+}
+
+.result-table th:nth-child(4),
+.result-table td:nth-child(4) {
+	width: 20%; /* 種類の列 */
+}
+
 .result-table th {
 	background-color: #4caf50;
 	color: white;
@@ -264,6 +285,27 @@ footer {
 		padding: 8px;
 	}
 
+	/* モバイルでの列幅調整 */
+	.result-table th:nth-child(1),
+	.result-table td:nth-child(1) {
+		width: 35%; /* 材料名の列を少し狭く */
+	}
+
+	.result-table th:nth-child(2),
+	.result-table td:nth-child(2) {
+		width: 20%; /* 割合の列 */
+	}
+
+	.result-table th:nth-child(3),
+	.result-table td:nth-child(3) {
+		width: 25%; /* 必要量の列を少し広く */
+	}
+
+	.result-table th:nth-child(4),
+	.result-table td:nth-child(4) {
+		width: 20%; /* 種類の列 */
+	}
+
 	/* テーブルを横スクロール対応 */
 	.result-table {
 		display: block;
@@ -309,5 +351,26 @@ footer {
 	.result-table th,
 	.result-table td {
 		padding: 6px;
+	}
+
+	/* 小さなスマートフォンでの列幅調整 */
+	.result-table th:nth-child(1),
+	.result-table td:nth-child(1) {
+		width: 30%; /* 材料名の列をさらに狭く */
+	}
+
+	.result-table th:nth-child(2),
+	.result-table td:nth-child(2) {
+		width: 20%; /* 割合の列 */
+	}
+
+	.result-table th:nth-child(3),
+	.result-table td:nth-child(3) {
+		width: 30%; /* 必要量の列を広く */
+	}
+
+	.result-table th:nth-child(4),
+	.result-table td:nth-child(4) {
+		width: 20%; /* 種類の列 */
 	}
 }
