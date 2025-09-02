@@ -12,7 +12,7 @@
 
 ## 🚀 デモ
 
-[GitHub Pages で確認する](https://your-username.github.io/powder-calc/)
+[GitHub Pages で確認する](https://Anju1023.github.io/powder-calc/)
 
 ## 📱 使用方法
 
